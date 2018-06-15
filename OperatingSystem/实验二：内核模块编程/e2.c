@@ -19,7 +19,7 @@ static int hello_init(void)
     printk("me: %d %s\n", p->pid, p->comm);
 
     // 兄弟进程
-    list_for_each(pp, &p->sibling)
+    list_for_each(pp, &p->sibling) // 但如果是这样，会出来一个pid为0的进程；正确做法是找父进程的子进程。
     {
         psibling = list_entry(pp, struct task_struct, sibling);
         printk("sibling %d %s \n", psibling->pid, psibling->comm);
