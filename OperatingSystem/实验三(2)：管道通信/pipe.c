@@ -1,4 +1,3 @@
-// https://blog.csdn.net/oguro/article/details/53841949
 #include <errno.h>
 #include <fcntl.h> // O_CREATE
 #include <semaphore.h>
@@ -17,7 +16,7 @@ void WritePipe(int id, pid_t toWait)
     close(fd[0]); // 关闭读取管道
 
     if (toWait != 0)
-        waitpid(toWait, NULL, 0);
+        waitpid(toWait, NULL, 0); // 无效
 
     // lockf(fd[1], 1, 0); //对写管道加锁
 
