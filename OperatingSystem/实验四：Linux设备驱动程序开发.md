@@ -22,3 +22,8 @@ struct file_operations pStruct =
 ### ioctl
 
 现在的Linux的file_operations已经没有ioctl成员了，而是unlocked_ioctl。而且两者签名还不同，前者多了`struct inode *inode`参数。因为是使用别人的代码，直接注释掉这个函数指针就好
+
+> Note that nosuid etc flags are inode-specific: setting some file-system
+> flags just means all the inodes inherit those flags by default. It might be
+> possible to override it selectively if you really wanted to with some
+> ioctl() that is not currently implemented.
