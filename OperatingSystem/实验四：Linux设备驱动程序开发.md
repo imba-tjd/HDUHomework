@@ -27,3 +27,7 @@ struct file_operations pStruct =
 > flags just means all the inodes inherit those flags by default. It might be
 > possible to override it selectively if you really wanted to with some
 > ioctl() that is not currently implemented.
+
+### module verification failed
+
+需要进行模块许可声明，见实验二。
