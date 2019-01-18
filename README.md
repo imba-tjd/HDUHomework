@@ -8,4 +8,4 @@
 
 另外，以下仓库的内容较多：
 
-* https://github.com/FengGuanxi/HDU-Experience/tree/master/%E5%AD%A6%E4%B9%A0
+* <https://github.com/FengGuanxi/HDU-Experience/tree/master/学习>
