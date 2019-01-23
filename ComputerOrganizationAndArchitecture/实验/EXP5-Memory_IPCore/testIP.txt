@@ -1,0 +1,12 @@
+clka = 0;
+wea = 0;
+addra = 0;
+dina = 0;
+
+#100;
+
+clka=1;
+
+#100;
+
+clka=0;

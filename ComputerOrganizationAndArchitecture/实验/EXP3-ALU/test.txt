@@ -1,0 +1,154 @@
+`timescale 1ns / 1ps
+
+////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer:
+//
+// Create Date:   23:06:23 05/08/2018
+// Design Name:   ALU
+// Module Name:   D:/FPGA/EXP3/test2.v
+// Project Name:  EXP3
+// Target Device:  
+// Tool versions:  
+// Description: 
+//
+// Verilog Test Fixture created by ISE for module: ALU
+//
+// Dependencies:
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+module test2;
+
+	// Inputs
+	reg [31:0] A;
+	reg [31:0] B;
+	reg [2:0] ALU_OP;
+
+	// Outputs
+	wire [31:0] F;
+	wire ZF;
+	wire OF;
+
+	ALU uut (
+		.A(A), 
+		.B(B), 
+		.ALU_OP(ALU_OP), 
+		.F(F), 
+		.ZF(ZF), 
+		.OF(OF)
+	);
+
+	initial begin
+		A = 32'h7FFF_FFFF;B = 32'h7FFF_FFFF;
+		
+		ALU_OP = 0;
+		#20;
+        
+		ALU_OP = 1;
+		#20;
+		
+		ALU_OP = 2;
+		#20;
+		
+		ALU_OP = 3;
+		#20;
+		
+		ALU_OP = 4;
+		#20;
+		
+		ALU_OP = 5;
+		#20;
+		
+		ALU_OP = 6;
+		#20;
+		
+		ALU_OP = 7;
+		#20;
+		
+		A = 32'h8000_0000;B=32'h8000_0000;
+		
+		ALU_OP = 0;
+		#20;
+        
+		ALU_OP = 1;
+		#20;
+		
+		ALU_OP = 2;
+		#20;
+		
+		ALU_OP = 3;
+		#20;
+		
+		ALU_OP = 4;
+		#20;
+		
+		ALU_OP = 5;
+		#20;
+		
+		ALU_OP = 6;
+		#20;
+		
+		ALU_OP = 7;
+		#20;
+		
+		A = 32'h0000_0003;B=32'h0000_0607;
+		
+		ALU_OP = 0;
+		#20;
+        
+		ALU_OP = 1;
+		#20;
+		
+		ALU_OP = 2;
+		#20;
+		
+		ALU_OP = 3;
+		#20;
+		
+		ALU_OP = 4;
+		#20;
+		
+		ALU_OP = 5;
+		#20;
+		
+		ALU_OP = 6;
+		#20;
+		
+		ALU_OP = 7;
+		#20;
+		
+		A = 32'hFFFF_FFFF;B=32'h8000_0000;
+		
+		ALU_OP = 0;
+		#20;
+        
+		ALU_OP = 1;
+		#20;
+		
+		ALU_OP = 2;
+		#20;
+		
+		ALU_OP = 3;
+		#20;
+		
+		ALU_OP = 4;
+		#20;
+		
+		ALU_OP = 5;
+		#20;
+		
+		ALU_OP = 6;
+		#20;
+		
+		ALU_OP = 7;
+		#20;
+
+	end
+      
+endmodule
+

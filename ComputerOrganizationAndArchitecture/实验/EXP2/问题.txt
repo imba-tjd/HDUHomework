@@ -1,0 +1,1 @@
+Target <G> of concurrent assignment or output port connection should be a net type.

@@ -1,0 +1,148 @@
+Clk=0;
+
+// 读取预先存放的数据
+Write_Reg=0;
+
+Addr=0;
+#25
+Clk=1;
+
+Select = 0;
+#25
+Select = 1;
+#25
+Select = 2;
+#25
+Select = 3;
+
+#25
+Clk=0;
+Addr=1;
+#25
+Clk=1;
+
+Select = 0;
+#25
+Select = 1;
+#25
+Select = 2;
+#25
+Select = 3;
+
+#25
+Clk=0;
+Addr=2;
+#25
+Clk=1;
+
+Select = 0;
+#25
+Select = 1;
+#25
+Select = 2;
+#25
+Select = 3;
+
+#25
+Clk=0;
+Addr=3;
+#25
+Clk=1;
+
+Select = 0;
+#25
+Select = 1;
+#25
+Select = 2;
+#25
+Select = 3;
+
+
+#25
+// 开始写入
+Write_Reg=1;
+
+Clk=1;
+Addr=4;
+Select=0;
+#25
+Clk=0;
+
+# 25
+Clk=1;
+Addr=8;
+Select=1;
+#25
+Clk=0;
+
+# 25
+Clk=1;
+Addr=16;
+Select=2;
+#25
+Clk=0;
+
+# 25
+Clk=1;
+Addr=31;
+Select=3;
+#25
+Clk=0;
+
+// 开始读取
+#25
+Write_Reg=0;
+
+Addr=4;
+#25
+Clk=1;
+
+Select = 0;
+#25
+Select = 1;
+#25
+Select = 2;
+#25
+Select = 3;
+
+#25
+Clk=0;
+Addr=8;
+#25
+Clk=1;
+
+Select = 0;
+#25
+Select = 1;
+#25
+Select = 2;
+#25
+Select = 3;
+
+#25
+Clk=0;
+Addr=16;
+#25
+Clk=1;
+
+Select = 0;
+#25
+Select = 1;
+#25
+Select = 2;
+#25
+Select = 3;
+
+#25
+Clk=0;
+Addr=31;
+#25
+Clk=1;
+
+Select = 0;
+#25
+Select = 1;
+#25
+Select = 2;
+#25
+Select = 3;
