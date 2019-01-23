@@ -1,0 +1,21 @@
+NET "Addr[0]" LOC = "T5";
+NET "Addr[1]" LOC = "V8";
+NET "Addr[2]" LOC = "U8";
+NET "Addr[3]" LOC = "N8";
+NET "Addr[4]" LOC = "M8";
+NET "Addr[5]" LOC = "V9";
+
+NET "Select[0]" LOC = "T9";
+NET "Select[1]" LOC = "T10";
+
+NET "Clk" LOC = "C9";
+NET "Write_Reg" LOC = "B8";
+
+NET "LED[0]" LOC = "T11";
+NET "LED[1]" LOC = "R11";
+NET "LED[2]" LOC = "N11";
+NET "LED[3]" LOC = "M11";
+NET "LED[4]" LOC = "V15";
+NET "LED[5]" LOC = "U15";
+NET "LED[6]" LOC = "V16";
+NET "LED[7]" LOC = "U16";

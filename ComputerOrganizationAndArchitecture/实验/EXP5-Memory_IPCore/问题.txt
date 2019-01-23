@@ -1,0 +1,5 @@
+Line 39: Empty module <RAM_B> remains a black box.
+
+IP核的使用
+
+Incorrect number of bits in bitstream (18) for FDRI write：有人说是添加或更改chipscope后引起的，删除即可。但是我并没有使用这个。后来看到有人说是ISE与Win 10的兼容性问题，ReRun一下就好了。确实如此。

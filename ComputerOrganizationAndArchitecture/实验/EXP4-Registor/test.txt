@@ -1,0 +1,101 @@
+Reset=1;
+Clk=0;
+Write_Reg=1;
+Reset=0;
+//LED=0;
+
+// 开始写入
+
+//#30
+
+Clk=0;
+Addr=1;
+Select=0; // 此时的Select用于选择数据
+#30
+Clk=1;
+
+# 30
+Clk=0;
+Addr=2;
+Select=1;
+#30
+Clk=1;
+
+# 30
+Clk=0;
+Addr=4;
+Select=2;
+#30
+Clk=1;
+
+# 30
+Clk=0;
+Addr=8;
+Select=3;
+#30
+Clk=1;
+
+// 开始读取
+
+#30
+
+Write_Reg=0;
+
+Addr=1;
+A_B=0;
+Select = 0; // 此时的Select用于选择LED
+#30
+Select = 1;
+#30
+Select = 2;
+#30
+Select = 3;
+
+// 因为R_Addr_A和R_Addr_B实质相同，都来源于Addr，就不用测试B的情况了
+// #30
+// A_B=1;
+
+#30
+
+Addr=2;
+A_B=0;
+Select = 0;
+#30
+Select = 1;
+#30
+Select = 2;
+#30
+Select = 3;
+
+#30
+
+Addr=4;
+A_B=0;
+Select = 0;
+#30
+Select = 1;
+#30
+Select = 2;
+#30
+Select = 3;
+
+#30
+
+Addr=8;
+A_B=0;
+Select = 0;
+#30
+Select = 1;
+#30
+Select = 2;
+#30
+Select = 3;
+
+#30
+
+// 测试没有赋值的
+
+Addr=0;
+A_B=0;
+#30
+A_B=1;
