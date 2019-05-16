@@ -1,4 +1,4 @@
-# HDUHomeWork
+# [HDU](http://sie.hdu.edu.cn/)HomeWork
 
 存放一些杭电的文件，只包含我自己选了的课。<br />
 一部分是老师发的课件，一部分是同学发的答案，还有一部分是我自己做的作业。<br />
