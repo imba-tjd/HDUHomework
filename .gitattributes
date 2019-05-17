@@ -27,7 +27,6 @@
 *.csv text
 *.tab text
 *.tsv text
-*.sql text
 
 # Graphics
 *.png binary
@@ -42,3 +41,7 @@
 *.svg binary
 #*.svg text
 *.eps binary
+
+# override language definitions
+*.sql linguist-detectable=true
+*.v linguist-language=Verilog
