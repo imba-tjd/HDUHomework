@@ -1,4 +1,4 @@
-objects = md5.o main.o
+objects = md5.o getmd5.o main.o
 
 main : $(objects)
 	gcc $(objects) -o main.exe
@@ -6,6 +6,7 @@ main : $(objects)
 .PHONY : clean run ln
 clean :
 	-rm -f *.o *.exe
+	-rm -f plain.txt
 run :
 	./main.exe
 	md5sum plain.txt
