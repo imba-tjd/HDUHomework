@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <time.h>
 #include "mpir.h"
 #include <assert.h>
@@ -78,27 +77,4 @@ void Encrypt(const char *plain, mpz_t n, mpz_t e, mpz_t cipher)
 void Decrypt(mpz_t cipher, mpz_t n, mpz_t d, mpz_t restored)
 {
     mpz_powm(restored, cipher, d, n);
-}
-
-int main()
-{
-    mpz_t n, e, d;
-    mpz_init(n);
-    mpz_init(e);
-    mpz_init(d);
-
-    ShengChengMiYao(n, e, d);
-
-    const char *plain = "1234567890ABCDEF";
-    mpz_t cipher;
-    mpz_init(cipher);
-    Encrypt(plain, n, e, cipher);
-    gmp_printf("cipher:%ZX\n", cipher);
-
-    mpz_t restored;
-    mpz_init(restored);
-    Decrypt(cipher, n, d, restored);
-    gmp_printf("restored:%ZX\n", restored);
-
-    return 0;
 }
