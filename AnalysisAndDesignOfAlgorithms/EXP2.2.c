@@ -5,14 +5,14 @@ static int *Array;
 // static int Array[15];
 static int Rows;
 
-inline static int GetNum(int row, int position)
+static inline int GetNum(int row, int position)
 {
     int index = row * (row - 1) / 2 + position - 1; // 前row-1行相加，首项1末项row-1项数row-1
     int result = Array[index];
     return result;
 }
 
-inline static int Max(int a, int b)
+static inline int Max(int a, int b)
 {
     return a > b ? a : b;
 }

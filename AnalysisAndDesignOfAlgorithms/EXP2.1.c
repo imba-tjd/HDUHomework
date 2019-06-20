@@ -3,11 +3,11 @@
 #include <stdlib.h> // abs
 #include <string.h> // memset
 
-inline static int min3(int a, int b, int c)
+static inline int min3(int a, int b, int c)
 {
     return a > b ? (b > c ? c : b) : (a > c ? c : a);
 }
-inline static int dist(char a, char b)
+static inline int dist(char a, char b)
 {
     return abs(a - b);
 }
@@ -16,7 +16,7 @@ static char A[BUFSIZ], B[BUFSIZ];
 static int I, J;
 static int *T; // 动态分配一维数组模拟二维数组
 
-inline static int getTe(int i, int j) // 方便取出一维数组模拟的二维数组
+static inline int getTe(int i, int j) // 方便取出一维数组模拟的二维数组
 {
     return (i == -1 || j == -1) ? -1 : T[i * J + j]; // 越界返回主要是为了show，因为val已经手动处理了越界
 }
