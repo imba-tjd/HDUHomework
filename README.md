@@ -6,6 +6,23 @@
 
 你可以copy但是需要注明出处并且我不保证正确性。
 
-另外，以下仓库的内容较多：
+## TOC
+
+* [算法分析与设计](./AnalysisAndDesignOfAlgorithms)
+* [计算机网络](./ComputerNetworking)
+* [计算机组成原理及课程设计](./ComputerOrganization)
+* [数据库及课程设计](./Databases)
+* [Debug杯](./DebugCup)
+* [工程经济学](./EngineeringEconomics)
+* [创业管理](./EntrepreneurManagement)
+* [信息安全技术](./InformationSecurityTechnology)
+* [Linux系统及应用](./LinuxSystemAndItsApplication)
+* [操作系统](./OperatingSystem)
+* [Oracle数据库应用](./Oracle)
+* [软件工程导论](./SoftwareEngineeringIntroduction)
+* [软件过程与管理](./SoftwareProcessAndManagement)
+* [软件需求分析](./SoftwareRequirementsAnalysis)
+
+对于公共课，以下仓库的内容较多：
 
 * <https://github.com/FengGuanxi/HDU-Experience/tree/master/学习>
