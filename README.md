@@ -22,6 +22,9 @@
 * [软件工程导论](./SoftwareEngineeringIntroduction)
 * [软件过程与管理](./SoftwareProcessAndManagement)
 * [软件需求分析](./SoftwareRequirementsAnalysis)
+* [学生成绩管理系统(C)](../../../C-Code-Repository/blob/master/StudentsScoreManagementSystem(SSMS).c)
+
+---
 
 对于公共课，以下仓库的内容较多：
 
