@@ -44,4 +44,5 @@
 
 # override language definitions
 *.sql linguist-detectable=true
+*.sql linguist-language=SQL
 *.v linguist-language=Verilog
