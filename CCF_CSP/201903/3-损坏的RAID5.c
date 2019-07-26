@@ -40,7 +40,7 @@ void Handle()
 
     int pcol = (n - 1 - srow) % n; // 当前行的P在哪列上，一个-1是去掉P，还一个是n是数量不是索引
     if (pcol < 0)
-        pcol += n; // C取余后符号取决于被除数，要处理一下
+        pcol += n; // C取余后符号取决于被除数，要处理一下；或者也可以放到上一步里直接+n
 
     int bcol = (pcol + srest) % n; // 由P的列推出块所在条带的列，也是块的列
 
