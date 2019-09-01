@@ -1,13 +1,16 @@
 # [HDU](http://sie.hdu.edu.cn/)HomeWork
 
+![GitHub repo size](https://img.shields.io/github/repo-size/imba-tjd/HDUHomeWork)
+
 存放一些杭电的文件，只包含我自己选了的课。
 
-一部分是老师发的课件，一部分是同学发的答案，还有一部分是我自己做的作业。<br>
-仓库大小释放前略大于250M，clone时注意网络环境且记得加`--depth=1`，或者自己找怎么下载部分文件。
+一部分是老师发的课件，一部分是同学发的答案，还有一部分是我自己做的作业。
+
+clone时注意网络环境且最好加`--depth=1`。
 
 你可以copy但是需要注明出处并且我不保证正确性。
 
-有的文档末尾用了`\`但是cayman还是jekyll无法识别，可以直接进仓库看GitHub渲染的。
+有的文档末尾用了`\`但是cayman还是jekyll无法识别，可以直接看GitHub渲染的。
 
 ## TOC
 
