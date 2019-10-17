@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <assert.h>
+#include <stdio.h>
 
 typedef struct
 {
@@ -76,8 +76,8 @@ static void OneColorPrint(int c)
     if (t != 0)
         printf("\\x%x", t + '0');
     t = c % 10;
-    if (t != 0)
-        printf("\\x%x", t + '0');
+    printf("\\x%x", t + '0');
+    // 三个全部为0已经在外面处理了，但假如其中有一个分量为0，仍然要输出0，即最后一个不能有if
 }
 
 int main()
@@ -99,28 +99,33 @@ int main()
         for (int c = 0; c < m; c += p) // (r,c)即一个块的起始坐标
         {
             Pixle pi = {0};
-            for (int i = c; i < c + p; i++)
-                for (int j = r; j < r + q; j++)
+            for (int i = r; i < r + q; i++)
+                for (int j = c; j < c + p; j++)
                     PAdd(&pi, pic[i][j]);
             PAve(&pi, p * q);
 
             if (!PEql(pi, pipre)) // 和前一个颜色一样就不用改
-            {
-                //printf("\\x1B\\x5B\\x34\\x38\\x3B\\x32\\x3B\\x%X\\x3B\\x%X\\x3B\\x%X\x6D");
-                printf("\\x1B\\x5B\\x34\\x38\\x3B\\x32\\x3B");
-                OneColorPrint(pi.R);
-                printf("\\x3B");
-                OneColorPrint(pi.G);
-                printf("\\x3B");
-                OneColorPrint(pi.B);
-                printf("\\x6D");
-            }
+                if (PEql(pi, (Pixle){0}))
+                    printf("\\x1B\\x5B\\x30\\x6D"); // 题目说了如果当前颜色是纯黑，直接用重置
+                else
+                {
+                    // 手动更改颜色
+                    //printf("\\x1B\\x5B\\x34\\x38\\x3B\\x32\\x3B\\x%X\\x3B\\x%X\\x3B\\x%X\x6D");
+                    printf("\\x1B\\x5B\\x34\\x38\\x3B\\x32\\x3B");
+                    OneColorPrint(pi.R);
+                    printf("\\x3B");
+                    OneColorPrint(pi.G);
+                    printf("\\x3B");
+                    OneColorPrint(pi.B);
+                    printf("\\x6D");
+                }
 
             printf("\\x20"); // space
 
             pipre = pi;
         }
         if (!PEql(pipre, (Pixle){0})) // 如果是黑色就不用输出重置的信息了
-            printf("\\x1B\\x5B\\x30\\x6D\\x0A");
+            printf("\\x1B\\x5B\\x30\\x6D");
+        printf("\\x0A"); // 换行
     }
 }
