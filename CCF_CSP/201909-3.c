@@ -1,113 +1,110 @@
 #include <stdio.h>
 #include <assert.h>
 
-struct A
+typedef struct
 {
     int R;
     int G;
     int B;
-};
-typedef struct A Pixle;
+} Pixle;
 
-static Pixle pic[1920][1080];
+static Pixle pic[1080][1920]; // 看作横向的图，所以第二个分量反而更大
 
-static int char2int(char c)
+// 单个16进制字符转换成十进制数字
+static inline int char2int(char c)
 {
-    return c<='9'?c-'0':c-'A'+10;
+    return c <= '9' ? c - '0' : c - 'A' + 10;
 }
 
-static int OneColor2int(char a, char b)
+// 两个16进制字符转换成十进制数字
+static inline int OneColor2int(char a, char b)
 {
-    return char2int(a)*16+char2int(b);
+    return char2int(a) * 16 + char2int(b);
 }
 
-static void FillPixle(Pixle* p, char* line)
+static void FillPixle(Pixle *p, char *line)
 {
-    if(line[2]=='\0')
+    if (line[2] == '\0')
     {
-        int c = OneColor2int(line[1],line[1]);
+        int c = OneColor2int(line[1], line[1]);
         p->R = c;
         p->G = c;
         p->B = c;
     }
-    else if(line[4]=='\0')
+    else if (line[4] == '\0')
     {
-        p->R = OneColor2int(line[1],line[1]);
-        p->G = OneColor2int(line[2],line[2]);
-        p->B = OneColor2int(line[3],line[3]);
+        p->R = OneColor2int(line[1], line[1]);
+        p->G = OneColor2int(line[2], line[2]);
+        p->B = OneColor2int(line[3], line[3]);
     }
-    else if(line[7] == '\0')
+    else if (line[7] == '\0')
     {
-        p->R = OneColor2int(line[1],line[2]);
-        p->G = OneColor2int(line[3],line[4]);
-        p->B = OneColor2int(line[5],line[6]);
+        p->R = OneColor2int(line[1], line[2]);
+        p->G = OneColor2int(line[3], line[4]);
+        p->B = OneColor2int(line[5], line[6]);
     }
     else
         assert(0);
 }
 
-static void PAdd(Pixle* a, Pixle b)
+static void PAdd(Pixle *a, Pixle b)
 {
-    a->R+=b.R;
-    a->G+=b.G;
-    a->B+=b.B;
+    a->R += b.R;
+    a->G += b.G;
+    a->B += b.B;
 }
 
-static void PAve(Pixle* a,int num)
+static void PAve(Pixle *a, int num)
 {
-    a->R/=num;
-    a->G/=num;
-    a->B/=num;
+    a->R /= num;
+    a->G /= num;
+    a->B /= num;
 }
 
-static int PEql(Pixle a, Pixle b)
+static inline int PEql(Pixle a, Pixle b)
 {
     return a.R == b.R && a.G == b.G && a.B == b.B;
 }
 
-static void OneColorPrintIntern(int c)
-{
-    printf("\\x%x",c+'0');
-}
-
+// 假如颜色的值是255，要看成三个**字符**输出16进制
 static void OneColorPrint(int c)
 {
-    int t = c /100;
-    if(t!=0)
-        OneColorPrintIntern(t);
-    t= c%100/10;
-    if(t!=0)
-        OneColorPrintIntern(t);
-    t= c%10;
-    if(t!=0)
-        OneColorPrintIntern(t);
+    int t = c / 100;
+    if (t != 0)
+        printf("\\x%x", t + '0');
+    t = c % 100 / 10;
+    if (t != 0)
+        printf("\\x%x", t + '0');
+    t = c % 10;
+    if (t != 0)
+        printf("\\x%x", t + '0');
 }
 
 int main()
 {
-    int m,n,p,q;
-    scanf("%d %d %d %d",&m,&n,&p,&q);
+    int m, n, p, q;
+    scanf("%d %d %d %d", &m, &n, &p, &q);
     getchar();
-    for(int i=0; i<m; i++)
-        for(int j=0; j<n; j++)
+    for (int i = 0; i < n; i++)     // n是行指针界限（“高”）
+        for (int j = 0; j < m; j++) // m是纵坐标界限（“宽”）
         {
             char line[8];
             gets(line);
-            FillPixle(&pic[i][j],line);
+            FillPixle(&pic[i][j], line);
         }
 
-    for(int r=0; r<m; r+=q) // yao fan guo lai
+    for (int r = 0; r < n; r += q)
     {
-        Pixle pipre = {0};
-        for(int c=0; c<n; c+=p) // one block
+        Pixle pipre = {0};             // 每次换行，值初始化为黑色
+        for (int c = 0; c < m; c += p) // (r,c)即一个块的起始坐标
         {
             Pixle pi = {0};
-            for(int i=c; i<c+p; i++)
-                for(int j=r; j<r+q; j++)
-                    PAdd(&pi,pic[i][j]);
-            PAve(&pi,p*q);
+            for (int i = c; i < c + p; i++)
+                for (int j = r; j < r + q; j++)
+                    PAdd(&pi, pic[i][j]);
+            PAve(&pi, p * q);
 
-            if(!PEql(pi,pipre))
+            if (!PEql(pi, pipre)) // 和前一个颜色一样就不用改
             {
                 //printf("\\x1B\\x5B\\x34\\x38\\x3B\\x32\\x3B\\x%X\\x3B\\x%X\\x3B\\x%X\x6D");
                 printf("\\x1B\\x5B\\x34\\x38\\x3B\\x32\\x3B");
@@ -123,6 +120,7 @@ int main()
 
             pipre = pi;
         }
-        printf("\\x1B\\x5B\\x30\\x6D\\x0A");
+        if (!PEql(pipre, (Pixle){0})) // 如果是黑色就不用输出重置的信息了
+            printf("\\x1B\\x5B\\x30\\x6D\\x0A");
     }
 }
