@@ -14,7 +14,7 @@
 
 # 做过的题
 
-3月份的是测试题。9月份的是我自己正式考试的题，原题还没出来所以Remarks不全。其它测试题都不打算做了。
+3月份的是测试题。9月份的是我自己正式考试的题。其它测试题都不打算做了。
 
 ## [201903-1-小中大](./201903-1.c)
 
@@ -131,10 +131,12 @@ To be added.
 
 * 之前m和n弄反了，其实外层循环是n（高），图片也应该是`[1080][1920]`，这样才是横着的
 * 少看了一句话：如果下一个颜色和默认值相同，应该使用**重置命令**而不是手动更改颜色
+* 输入居然是小写的，我只处理了数字和大写。虽然不处理大写也能满分，但是我却根本没处理小写。这也是导致我得零分最关键的一点
+* 输出数字：如果百位不为0，十位为0，仍然要输出十位的0；以及如果就是0，要输出0，不能什么都不输出。现在改用sprintf自动转成字符串了
 
-然而我现在的代码还是零分，可真是有够好笑呢。
+现在的代码仍然有一个问题：如果把Pixle的三个成员改成unsigned char，会得0分；改成unsigned short，会得60分。原因不明。
 
-满分代码：https://blog.csdn.net/richenyunqi/article/details/101399918, https://blog.csdn.net/weixin_43850392/article/details/101434283, java: https://www.twblogs.net/a/5d7f4a6fbd9eee541c3488ad
+其它满分代码：https://blog.csdn.net/richenyunqi/article/details/101399918, https://blog.csdn.net/weixin_43850392/article/details/101434283, java: https://www.twblogs.net/a/5d7f4a6fbd9eee541c3488ad
 
 ```
 ESC：\x1B
@@ -194,6 +196,18 @@ m: \x6D
 #0
 #0
 \x1B\x5B\x34\x38\x3B\x32\x3B\x30\x3B\x30\x3B\x31\x6D\x20\x1B\x5B\x30\x6D\x20\x20\x0A
+
+1 2
+1 2
+#123456
+#abcdef
+\x1B\x5B\x34\x38\x3B\x32\x3B\x39\x34\x3B\x31\x32\x38\x3B\x31\x36\x32\x6D\x20\x1B\x5B\x30\x6D\x0A
+
+2 1
+2 1
+#654321
+#fedcba
+\x1B\x5B\x34\x38\x3B\x32\x3B\x31\x37\x37\x3B\x31\x34\x33\x3B\x31\x30\x39\x6D\x20\x1B\x5B\x30\x6D\x0A
 ```
 
 ## 201909-5
