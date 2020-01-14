@@ -1,16 +1,12 @@
-# [HDU](http://sie.hdu.edu.cn/)HomeWork
+# [HDU](http://sie.hdu.edu.cn/)Homework
 
-![GitHub repo size](https://img.shields.io/github/repo-size/imba-tjd/HDUHomeWork)
+![Repo size](https://img.shields.io/github/repo-size/imba-tjd/HDUHomeWork)
 
-存放一些杭电的文件，只包含我自己选了的课。
-
-一部分是老师发的课件，一部分是同学发的答案，还有一部分是我自己做的作业。
-
-clone时注意网络环境且最好加`--depth=1`。
-
+存放一些杭电的文件，只包含我自己选了的课。\
+一部分是老师发的课件，一部分是同学发的答案，还有一部分是我自己做的作业。\
 你可以copy但是需要注明出处并且我不保证正确性。
 
-有的文档末尾用了`\`但是cayman还是jekyll无法识别，可以直接看GitHub渲染的。
+clone时注意网络环境且最好加`--depth=1`；要不就下ZIP，也不会下到历史。
 
 ## TOC
 
