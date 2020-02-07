@@ -57,10 +57,15 @@ ElGamal签名：
 
 六、DH密钥交换协议
 
-随机生成大素数p，随机选择 1<alpha<p，公开。用户A随机生成 0<aA<p-2，用户B随机生成aB，分别计算 alpha^aX mod p，互相发送。A得到的密钥就是 alpha^aB^aA mod p，B的是 alpha^aA^aB mod p
+随机生成大素数p，随机选择1<g<p，公开。
+用户Ali随机生成0<A<p-2，用户Bob随机生成B（称为秘密s1和s2）。
+分别计算g^A/B mod p（称为消息m1和m2），互相发送（当然实际连接时是等Ali算完s1和m1，发请求到了Bob，Bob才开始算s2和m2）。
+Ali再计算g^B^A mod p，Bob的是g^A^B mod p，两者相等（称为K）。
+m是公钥，s是私钥。即使公开m1和m2，K仍无法求出。
+计算出K后对要加密的数据异或一下就加密了，再异或一下就解密了，因为两者的K相同；也可以使用AES，则K就是AES的密钥。
 安全性分析：基于求离散对数问题的困难性；存在中间人攻击。
 
-中间人攻击：A把 alpha^aA mod p 发给W，W生成 aA'，计算 alpha^aA' mod p 发给B。A和W的密钥就是 alpha^aB'^aA，B和W的类似。
+中间人攻击：Ali把g^A mod p发给W，W生成A'，计算g^A' mod p发给Bob。A和W的密钥就是g^B'^A，B和W的类似。
 中间人攻击的防御：利用数字签名可以解决中间人攻击的缺陷。抵御中间人攻击最有效的方法是加入第三方的公证机构，即引入PKI体系中的CA认证中心，提供对公钥的认证。
 
 七、认证和证书
