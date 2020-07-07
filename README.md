@@ -27,6 +27,7 @@ clone时注意网络环境且最好加`--depth=1`；要不就下ZIP，也不会�
 * [学生成绩管理系统(C)](../../../C-Code-Repository/blob/master/StudentsScoreManagementSystem(SSMS).c)
 * [用户体验设计](./UserExperienceDesign)
 * [CCF CSP](./CCF_CSP)
+* [毕业设计](./GraduationDesign)
 
 ## 其它仓库
 
