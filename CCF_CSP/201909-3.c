@@ -6,9 +6,9 @@ typedef struct
     int R;
     int G;
     int B;
-} Pixle;
+} Pixel;
 
-static Pixle pic[1080][1920]; // 看作横向的图，所以第二个分量反而更大
+static Pixel pic[1080][1920]; // 看作横向的图，所以第二个分量反而更大
 
 // 单个16进制字符转换成十进制数字
 static inline int char2int(char c)
@@ -25,7 +25,7 @@ static inline int OneColor2int(char a, char b)
     return char2int(a) * 16 + char2int(b);
 }
 
-static void FillPixle(Pixle *p, char *line)
+static void FillPixel(Pixel *p, char *line)
 {
     if (line[2] == '\0')
     {
@@ -50,21 +50,21 @@ static void FillPixle(Pixle *p, char *line)
         assert(0);
 }
 
-static void PAdd(Pixle *a, Pixle b)
+static void PAdd(Pixel *a, Pixel b)
 {
     a->R += b.R;
     a->G += b.G;
     a->B += b.B;
 }
 
-static void PAve(Pixle *a, int num)
+static void PAve(Pixel *a, int num)
 {
     a->R /= num;
     a->G /= num;
     a->B /= num;
 }
 
-static inline int PEql(Pixle a, Pixle b)
+static inline int PEql(Pixel a, Pixel b)
 {
     return a.R == b.R && a.G == b.G && a.B == b.B;
 }
@@ -102,22 +102,22 @@ int main()
         {
             char line[8];
             gets(line);
-            FillPixle(&pic[i][j], line);
+            FillPixel(&pic[i][j], line);
         }
 
     for (int r = 0; r < n; r += q)
     {
-        Pixle pipre = {0};             // 每次换行，值初始化为黑色
+        Pixel pipre = {0};             // 每次换行，值初始化为黑色
         for (int c = 0; c < m; c += p) // (r,c)即一个块的起始坐标
         {
-            Pixle pi = {0};
+            Pixel pi = {0};
             for (int i = r; i < r + q; i++)
                 for (int j = c; j < c + p; j++)
                     PAdd(&pi, pic[i][j]);
             PAve(&pi, p * q);
 
             if (!PEql(pi, pipre)) // 和前一个颜色一样就不用改
-                if (PEql(pi, (Pixle){0}))
+                if (PEql(pi, (Pixel){0}))
                     printf("\\x1B\\x5B\\x30\\x6D"); // 题目说了如果当前颜色是纯黑，直接用重置
                 else
                 {
@@ -136,7 +136,7 @@ int main()
 
             pipre = pi;
         }
-        if (!PEql(pipre, (Pixle){0})) // 如果是黑色就不用输出重置的信息了
+        if (!PEql(pipre, (Pixel){0})) // 如果是黑色就不用输出重置的信息了
             printf("\\x1B\\x5B\\x30\\x6D");
         printf("\\x0A"); // 换行
     }

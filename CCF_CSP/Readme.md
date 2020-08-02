@@ -134,7 +134,7 @@ To be added.
 * 输入居然是小写的，我只处理了数字和大写。虽然不处理大写也能满分，但是我却根本没处理小写。这也是导致我得零分最关键的一点
 * 输出数字：如果百位不为0，十位为0，仍然要输出十位的0；以及如果就是0，要输出0，不能什么都不输出。现在改用sprintf自动转成字符串了
 
-现在的代码仍然有一个问题：如果把Pixle的三个成员改成unsigned char，会得0分；改成unsigned short，会得60分。原因不明。
+现在的代码仍然有一个问题：如果把Pixel的三个成员改成unsigned char，会得0分；改成unsigned short，会得60分。原因不明。
 
 其它满分代码：https://blog.csdn.net/richenyunqi/article/details/101399918, https://blog.csdn.net/weixin_43850392/article/details/101434283, java: https://www.twblogs.net/a/5d7f4a6fbd9eee541c3488ad
 
