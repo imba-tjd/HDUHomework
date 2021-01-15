@@ -24,10 +24,11 @@ clone时注意网络环境且最好加`--depth=1`；要不就下ZIP，也不会�
 * [软件工程导论](./SoftwareEngineeringIntroduction)
 * [软件过程与管理](./SoftwareProcessAndManagement)
 * [软件需求分析](./SoftwareRequirementsAnalysis)
-* [学生成绩管理系统(C)](../../../C-Code-Repository/blob/master/StudentsScoreManagementSystem(SSMS).c)
+* [~~学生成绩管理系统(C)~~](../../../C-Code-Repository/blob/master/StudentsScoreManagementSystem(SSMS).c)
 * [用户体验设计](./UserExperienceDesign)
 * [CCF CSP](./CCF_CSP)
 * [毕业设计](./GraduationDesign)
+* [数据结构PPT](./Others/数据结构PPT.zip)
 
 ## 其它仓库
 
