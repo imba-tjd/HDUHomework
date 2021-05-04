@@ -8,7 +8,7 @@
 
 * 安装后大概20GB多一点。含有大量的小文件所以个人建议装到VHDX里减少碎片
 * 对中文的支持极差，代码我都是用VSC纯文本编辑好再copy过去的
-* 官网上有支持win10的版本，但下载需要先注册；非win10专版需要修改某些文件后才能使用：
+* 官网上有支持win10的版本 https://www.xilinx.com/downloadNav/vivado-design-tools/archive-ise.html，但下载需要先注册；非win10专版需要修改某些文件后才能使用：
     > http://blog.csdn.net/u010725476/article/details/51878410
     > 1. Open the following directory: ...(安装目录):\Xilinx\14.7\ISE_DS\ISE\lib\nt64
     > 2. Find and rename libPortability.dll to libPortability.dll.orig
@@ -19,4 +19,4 @@
 
 ## 实验
 
-见[实验](./实验)
+见[实验](./实验)。

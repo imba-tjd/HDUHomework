@@ -5,3 +5,4 @@
 * 代码风格尽量保持一致，不过现在我已经看不懂了，不一致也没法改；而且本来我就不太会，连个正经的教程都找不到
 * 为了防止你们直接抄袭，最终的实验报告就不给你们了，压缩包加了密；不过根据已有的东西写出来也不难
 * `Combine.cs`是把1.txt和2.txt每一行都拼接起来的超级简单的程序，C#写的
+* 也许 https://github.com/mshr-h/vscode-verilog-hdl-support 和 https://bleyer.org/icarus 能提供Lint，但当初我尝试用不了
