@@ -3,9 +3,7 @@
 
 typedef struct
 {
-    int R;
-    int G;
-    int B;
+    int R, G, B;
 } Pixel;
 
 static Pixel pic[1080][1920]; // 看作横向的图，所以第二个分量反而更大
