@@ -9,4 +9,4 @@ def Do():
 n=int(input())
 while n >0:
     Do()
-    n = n -1
+    n -= 1
