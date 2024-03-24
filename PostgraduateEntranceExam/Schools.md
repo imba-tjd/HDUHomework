@@ -66,9 +66,9 @@
 
 ## 南京大学
 
-* 专业目录、排名查询通知：https://yzb.nju.edu.cn/47863/list.htm
+* 专业目录、排名查询通知、推免人数：https://yzb.nju.edu.cn/47863/list.htm
 * 排名查询：https://gs.nju.edu.cn/geapp/sys/yjsbmxsd/entrance.do
-* 复试和录取名单：https://software.nju.edu.cn//tzgg/index.html
+* 复试和录取名单：https://software.nju.edu.cn//tzgg/index.html https://www.njuyz.com/news/?classId=575
 
 ## 数一英一
 
