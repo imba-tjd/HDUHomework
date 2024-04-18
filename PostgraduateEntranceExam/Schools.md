@@ -68,7 +68,9 @@
 
 * 专业目录、排名查询通知、推免人数：https://yzb.nju.edu.cn/47863/list.htm
 * 排名查询：https://gs.nju.edu.cn/geapp/sys/yjsbmxsd/entrance.do
-* 复试和录取名单：https://software.nju.edu.cn//tzgg/index.html https://www.njuyz.com/news/?classId=575
+* 复试和录取名单：https://software.nju.edu.cn/tzgg/index.html https://www.njuyz.com/news/?classId=575
+* 调档函：https://grawww.nju.edu.cn/69/ba/c905a616890/page.htm
+* 入学报到日程安排、体检：https://grawww.nju.edu.cn/ef/3f/c905a585535/page.htm
 
 ## 数一英一
 
